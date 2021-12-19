@@ -1,0 +1,238 @@
+:root {
+    /*primary*/
+    --black: hsl(233, 47%, 7%);
+    --blue: hsl(244, 38%, 16%);
+    --violet: hsl(277, 64%, 61%);
+
+    /*neutral*/
+    --white: hsl(0, 0%, 100%);
+    --t-white: hsla(0, 0%, 100%, 0.75);
+    --t-white-2: hsla(0, 0%, 100%, 0.6);
+
+    font-size: 15px;
+}
+
+@font-face {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+body {
+    background: var(--black);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+}
+
+.card {
+    background: var(--blue);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card__div {
+    margin: auto;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--white);
+    font-size: 2.25em;
+}
+
+h1 span {
+    color: var(--violet);
+}
+
+p {
+    color: var(--t-white-2);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.stats div {
+    text-transform: uppercase;
+    color: var(--t-white-2);
+    padding: 7.5px 0;
+    font-family: 'lexend deca';
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+}
+
+.stats span {
+    display: block;
+    color: var(--white);
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family: 'inter';
+}
+
+.card__img {
+    overflow: hidden;
+    background-color: var(--violet);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: var(--t-white-2);
+    width: 100%;
+    margin: auto 0 5px 0;
+}
+
+.attribution a {
+    color: var(--violet);
+}
+
+.attribution span {
+    font-weight: 400;
+    color: var(--violet);
+}
+
+
+@media screen and (min-width: 800px) {
+    body {
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 75%;
+        min-width: 750px;
+        margin: auto auto 0 auto;
+    }
+
+    .card__div {
+        width: 50%;
+        max-width: 500px;
+        height: 100%;
+        padding: 0 7%;
+    }
+
+    .stats {
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+
+    .stats div {
+        flex: 0 0;
+        min-width: 97.5px;
+    }
+
+    .card__img {
+        background-image: url(images/image-header-desktop.jpg);
+        width: 50%;
+        min-height: 450px;
+        max-height: 100%;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 799px) {
+    .card {
+        width: 85%;
+        margin: 50px auto;
+    }
+
+    .card__div {
+        width: 100%;
+        padding: 25px 7.5%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        order: 10;
+    }
+
+    h1 {
+        margin-bottom: auto;
+    }
+
+    p {
+        align-self: center;
+    }
+
+    .stats {
+        flex-wrap: wrap;
+        align-self: center;
+        grid-row: 1 / 3;
+        grid-column: 2 / 3;
+        gap: 20px;
+    }
+
+    .stats div {
+        flex: 0 0;
+        min-width: 97.5px;
+    }
+
+    .card__img {
+        background-image: url(images/image-header-desktop.jpg);
+        width: 100%;
+        height: 50vw;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 599px) {
+    .card {
+        width: 90%;
+        text-align: center;
+        margin: 50px auto;
+    }
+
+    .card__div {
+        padding: 0 7.5%;
+        order: 10;
+    }
+
+    .stats {
+        flex-direction: column;
+        margin: 30px auto;
+        gap: 15px;
+    }
+
+    .card__img {
+        background-image: url(images/image-header-mobile.jpg);
+        width: 100%;
+        height: 63vw;
+        margin-bottom: 5%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .card {
+        width: 100%;
+        text-align: center;
+        margin: 50px auto;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .card__div {
+        padding: 0 2.5%;
+        order: 10;
+    }
+
+    .stats {
+        flex-direction: column;
+        margin: 30px auto;
+        gap: 10px;
+    }
+
+    .card__img {
+        background-image: url(images/image-header-mobile.jpg);
+        width: 100%;
+        height: 63vw;
+        margin-bottom: 5%;
+    }
+}
